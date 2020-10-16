@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/head %>
+</head>
+
+<body>
+  <% include partials/menu %>
+
+  <div class="container-fluid bg-3 text-center">
+    <h3><%= title %></h3><br>
+    <div class="container">
+      <form class="form-signin form-group" role="form" action="/login" method="post" style="max-width: 300px;">
+        <h2 class="form-signin-heading form-group">Please sign in</h2>
+        <label class="sr-only form-group" for="inputEmail"></label>
+        <input class="form-control form-group" type="text" name="username" id="inputEmail" placeholder="Username" required="required" autofocus="autofocus" />
+        <input class="form-control form-group" type="password" name="password" id="inputPassword" placeholder="Password" />
+        <button class="btn btn-lg btn-primary btn-block form-group" type="submit">LOGIN</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+<% include partials/script %>
+
+</html>

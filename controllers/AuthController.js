@@ -9,9 +9,9 @@ userController.home = function(req, res) {
   res.render('index', { user : req.user });
 };
 
-// Go to registration page
+// Go to registration page 
 userController.register = function(req, res) {
-  res.render('register');
+  res.render('register',{ title: 'Register', page:'Register', menuId:'register'});
 };
 
 // Post registration
@@ -29,7 +29,7 @@ userController.doRegister = function(req, res) {
 
 // Go to login page
 userController.login = function(req, res) {
-  res.render('login');
+  res.render('login',{ title: 'Login', page:'Login', menuId:'login'});
 };
 
 // Post login
