@@ -44,7 +44,7 @@ app.use(function(err, req, res, next) {
 //MongoDB config
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/node-auth')
+mongoose.connect('mongodb://localhost/COMP229')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
