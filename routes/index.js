@@ -47,6 +47,8 @@ router.post('/login', auth.doLogin);
 router.get('/logout', auth.logout);
 
 router.get('/buzContact/index', buz.index);
+router.get('/buzContact/new', buz.new);
+router.post('/buzContact/new', buz.create);
 
 
 

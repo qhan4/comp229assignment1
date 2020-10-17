@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <% include ../partials/menu %>
+
+  <div class="container-fluid bg-3 text-center">
+    <h3><%= title %></h3><br>
+    <div class="row">
+      <div class="col-sm-4">
+        <p><a href="https://bafoeval.com/">Find Your Business Value From BAFOEVAL</a></p>
+      </div>
+
+      <div class="col-sm-8">
+        <p>...And Something BIG is in the Plan!.</p>
+        <form action="/buzContact/new" method="POST">
+      <input type="text" placeholder="name" name="name" />
+      <input type="text" placeholder="number" name="number" />
+      <input type="text" placeholder="email" name="email" />
+      <button type="submit">Submit</button>
+    </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+<% include ../partials/script %>
+
+</html>

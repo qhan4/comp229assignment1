@@ -50,7 +50,44 @@ var buzContactController = {};
 // });
 
 buzContactController.index = function(req, res, next) {
-  res.render('./buzContact/index', { title: 'Business Contacts', page:'Business Contacts', menuId:'buzContact'});
+
+  mongoose.model('BuzContact').find({}, function (err, contacts) {
+    if (err) {
+      return console.error(err);
+    } else {
+      res.format({
+        html: function(){
+          res.render('./buzContact/index', { title: 'Business Contacts', page:'Business Contacts', menuId:'buzContact', buzContacts: contacts});
+        },
+        json: function(){
+          res.json(contacts);
+        }
+      });
+    }
+  });
+};
+
+// // Go to login page
+buzContactController.new = function(req, res) {
+  res.render('./buzContact/new',{ title: 'New Contact', page:'Business Contact', menuId:'buzContact'});
+};
+
+buzContactController.create = function(req, res) {
+  var name = req.body.name;
+  var number = req.body.number;
+  var email = req.body.email;
+
+  mongoose.model('BuzContact').create({
+    name : name,
+    number : number,
+    email : email
+  }, function (err, contacts) {
+    if (err) {
+      return console.error(err);
+    } else {
+      res.redirect('/buzContact/index');
+    }
+  });
 };
 
 module.exports = buzContactController;
