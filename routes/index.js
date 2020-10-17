@@ -4,6 +4,7 @@ var router = express.Router();
 var express = require('express');
 var router = express.Router();
 var auth = require("../controllers/AuthController.js");
+var buz = require("../controllers/BuzContact.js");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -44,6 +45,9 @@ router.post('/login', auth.doLogin);
 
 // route for logout action
 router.get('/logout', auth.logout);
+
+router.get('/buzContact/index', buz.index);
+
 
 
 module.exports = router;
