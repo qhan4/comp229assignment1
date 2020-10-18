@@ -15,9 +15,9 @@
       </div>
       <div class="col-sm-8">
         <form action="/buzContact/new" method="POST" >
-      <input class="form-control form-group" type="text" placeholder="Contact Name" name="name" />
-      <input class="form-control form-group" type="text" placeholder="Contact Number" name="number" />
-      <input class="form-control form-group" type="text" placeholder="Contact Email Address" name="email" />
+      <input class="form-control form-group" type="text" placeholder="Contact Name" name="name" required/>
+      <input class="form-control form-group" type="text" placeholder="Contact Number" name="number" required/>
+      <input class="form-control form-group" type="email" placeholder="Contact Email Address" name="email" required/>
       <button class="btn btn-primary btn-rounded btn-xl text-uppercase" type="submit">Submit</button>
     </form>
       </div>

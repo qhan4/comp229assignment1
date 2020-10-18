@@ -15,9 +15,9 @@
       </div>
       <div class="col-sm-8">
         <form action="/buzContact/<%= contact._id%>/edit" method="POST" >
-      <input class="form-control form-group" type="text" placeholder="Contact Name" name="name" value="<%= contact.name%>"/>
-      <input class="form-control form-group" type="text" placeholder="Contact Number" name="number" value="<%= contact.number%>"/>
-      <input class="form-control form-group" type="text" placeholder="Contact Email Address" name="email" value="<%= contact.email%>"/>
+      <input class="form-control form-group" type="text" placeholder="Contact Name" name="name" value="<%= contact.name%>" required/>
+      <input class="form-control form-group" type="text" placeholder="Contact Number" name="number" value="<%= contact.number%>" required/>
+      <input class="form-control form-group" type="email" placeholder="Contact Email Address" name="email" value="<%= contact.email%>" required/>
       <button class="btn btn-primary btn-rounded btn-xl text-uppercase" type="submit">Update</button>
     </form>
       </div>
