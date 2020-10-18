@@ -51,6 +51,7 @@ router.get('/buzContact/new', buz.new);
 router.post('/buzContact/new', buz.create);
 router.get('/buzContact/:id/edit', buz.edit);
 router.post('/buzContact/:id/edit', buz.update);
+router.post('/buzContact/:id/delete', buz.delete);
 
 
 

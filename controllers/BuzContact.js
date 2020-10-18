@@ -4,54 +4,9 @@ var BuzContact = require("../models/BuzContact");
 
 var buzContactController = {};
 
-// Restrict access to root page
-// buzContactController.home = function(req, res) {
-//   res.render('index', { user : req.user });
-// };
-//
-// // Go to registration page
-// buzContactController.register = function(req, res) {
-//   res.render('register',{ title: 'Register', page:'Register', menuId:'register'});
-// };
-//
-// // Post registration
-// buzContactController.doRegister = function(req, res) {
-//   User.register(new User({ username : req.body.username, name: req.body.name }), req.body.password, function(err, user) {
-//     if (err) {
-//       return res.render('register', { user : user });
-//     }
-//
-//     passport.authenticate('local')(req, res, function () {
-//       res.redirect('/');
-//     });
-//   });
-// };
-//
-// // Go to login page
-// buzContactController.login = function(req, res) {
-//   res.render('login',{ title: 'Login', page:'Login', menuId:'login'});
-// };
-//
-// // Post login
-// buzContactController.doLogin = function(req, res) {
-//   passport.authenticate('local')(req, res, function () {
-//     res.redirect('/');
-//   });
-// };
-//
-// // logout
-// buzContactController.logout = function(req, res) {
-//   req.logout();
-//   res.redirect('/');
-// };
-//
-// buzContactController.index('/buzContact/index', function(req, res, next) {
-//   res.render('/buzContact/index', { title: 'Business Contacts', page:'Business Contacts', menuId:'buzContact'});
-// });
-
 buzContactController.index = function(req, res, next) {
 
-  mongoose.model('BuzContact').find({}, function (err, contacts) {
+  mongoose.model('BuzContact').find({}).sort({ name: 1 }).exec(function (err, contacts) {
     if (err) {
       return console.error(err);
     } else {
@@ -115,7 +70,18 @@ buzContactController.update = function(req, res) {
       res.redirect('/buzContact/index');
     }
   });
-
 };
+
+buzContactController.delete = function(req, res) {
+  mongoose.model('BuzContact').remove({_id: req.params.id}, function(err, contact) {
+    if (err) {
+      return console.error(err);
+    } else {
+      //res.send("Successfully Deleted Contact");
+      res.redirect('/buzContact/index');
+    }
+  });
+};
+
 
 module.exports = buzContactController;

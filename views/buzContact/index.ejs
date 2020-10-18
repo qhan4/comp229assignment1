@@ -38,7 +38,10 @@
               <td><%= buzContacts[i].number %></td>
               <td><%= buzContacts[i].email %></td>
               <td><a href="/buzContact/<%= buzContacts[i]._id%>/edit" id="sendMessageButton" class="btn btn-primary btn-rounded btn-xl text-uppercase" type="submit">Edit</a></td>
-              <td>cell5_1</td>
+              <td>
+                <form action="/buzContact/<%= buzContacts[i]._id%>/delete" id="sendMessageButton" method="post">
+                <button type="submit" class="btn btn-warning btn-rounded btn-xl text-uppercase">Delete</button>
+                </form></td>
             </tr>
             <% } %>
 
