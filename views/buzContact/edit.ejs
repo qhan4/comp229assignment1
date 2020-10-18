@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <% include ../partials/menu %>
+
+  <div class="container-fluid bg-3 text-center">
+    <h3><%= title %></h3><br>
+    <div class="row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-8">
+        <form action="/buzContact/<%= contact._id%>/edit" method="POST" >
+      <input class="form-control form-group" type="text" placeholder="Contact Name" name="name" value="<%= contact.name%>"/>
+      <input class="form-control form-group" type="text" placeholder="Contact Number" name="number" value="<%= contact.number%>"/>
+      <input class="form-control form-group" type="text" placeholder="Contact Email Address" name="email" value="<%= contact.email%>"/>
+      <button class="btn btn-primary btn-rounded btn-xl text-uppercase" type="submit">Update</button>
+    </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+<% include ../partials/script %>
+
+</html>

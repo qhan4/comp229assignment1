@@ -37,7 +37,7 @@
               <td><%= buzContacts[i].name %></td>
               <td><%= buzContacts[i].number %></td>
               <td><%= buzContacts[i].email %></td>
-              <td>cell4_1</td>
+              <td><a href="/buzContact/<%= buzContacts[i]._id%>/edit" id="sendMessageButton" class="btn btn-primary btn-rounded btn-xl text-uppercase" type="submit">Edit</a></td>
               <td>cell5_1</td>
             </tr>
             <% } %>

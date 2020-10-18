@@ -12,16 +12,13 @@
     <h3><%= title %></h3><br>
     <div class="row">
       <div class="col-sm-4">
-        <p><a href="https://bafoeval.com/">Find Your Business Value From BAFOEVAL</a></p>
       </div>
-
       <div class="col-sm-8">
-        <p>...And Something BIG is in the Plan!.</p>
-        <form action="/buzContact/new" method="POST">
-      <input type="text" placeholder="name" name="name" />
-      <input type="text" placeholder="number" name="number" />
-      <input type="text" placeholder="email" name="email" />
-      <button type="submit">Submit</button>
+        <form action="/buzContact/new" method="POST" >
+      <input class="form-control form-group" type="text" placeholder="Contact Name" name="name" />
+      <input class="form-control form-group" type="text" placeholder="Contact Number" name="number" />
+      <input class="form-control form-group" type="text" placeholder="Contact Email Address" name="email" />
+      <button class="btn btn-primary btn-rounded btn-xl text-uppercase" type="submit">Submit</button>
     </form>
       </div>
     </div>
