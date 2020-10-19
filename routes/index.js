@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const connectEnsureLogin = require('connect-ensure-login');
 
 var express = require('express');
 var router = express.Router();
@@ -46,12 +47,12 @@ router.post('/login', auth.doLogin);
 // route for logout action
 router.get('/logout', auth.logout);
 
-router.get('/buzContact/index', buz.index);
-router.get('/buzContact/new', buz.new);
-router.post('/buzContact/new', buz.create);
-router.get('/buzContact/:id/edit', buz.edit);
-router.post('/buzContact/:id/edit', buz.update);
-router.post('/buzContact/:id/delete', buz.delete);
+router.get('/buzContact/index', connectEnsureLogin.ensureLoggedIn(), buz.index);
+router.get('/buzContact/new', connectEnsureLogin.ensureLoggedIn(), buz.new);
+router.post('/buzContact/new', connectEnsureLogin.ensureLoggedIn(), buz.create);
+router.get('/buzContact/:id/edit', connectEnsureLogin.ensureLoggedIn(), buz.edit);
+router.post('/buzContact/:id/edit', connectEnsureLogin.ensureLoggedIn(), buz.update);
+router.post('/buzContact/:id/delete', connectEnsureLogin.ensureLoggedIn(), buz.delete);
 
 
 

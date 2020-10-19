@@ -6,6 +6,11 @@ var buzContactController = {};
 
 buzContactController.index = function(req, res, next) {
 
+  if(!req.user)
+    {
+      res.redirect('/');
+    } else {
+
   mongoose.model('BuzContact').find({}).sort({ name: 1 }).exec(function (err, contacts) {
     if (err) {
       return console.error(err);
@@ -20,6 +25,7 @@ buzContactController.index = function(req, res, next) {
       });
     }
   });
+}
 };
 
 buzContactController.new = function(req, res) {
