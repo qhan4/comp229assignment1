@@ -75,11 +75,18 @@ app.use(function(err, req, res, next) {
 //MongoDB config
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/COMP229')
+//mongoose.connect('mongodb://localhost/COMP229')
+  // .then(() =>  console.log('connection succesful'))
+  // .catch((err) => console.error(err));
+
+mongoose.connect("mongodb+srv://comp229:comp229@cluster0.oqxxs.mongodb.net/COMP229?retryWrites=true&w=majority")
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
-
+// var uri = "mongodb+srv://comp229:comp229@cluster0.oqxxs.mongodb.net/COMP229?retryWrites=true&w=majority";
+// mongoose.connect(uri, function(err, db) {
+//   db.close();
+// });
 
 var User = require('./models/User');
 //passport.use(new LocalStrategy(User.authenticate()));
