@@ -11,13 +11,18 @@
   <div class="container-fluid bg-3 text-center">
     <h3><%= title %></h3><br>
     <div class="container">
-      <form class="form-signin form-group" role="form" action="/register" method="post" style="max-width: 300px;">
-        <h2 class="form-signin-heading form-group">Sign Up here</h2>
-        <input class="form-control form-group" type="text" name="username" placeholder="Your Username" />
-        <input class="form-control form-group" type="email" name="email" placeholder="Your Email" />
-        <input class="form-control form-group" type="password" name="password" placeholder="Your Password" />
-        <button class="btn btn-lg btn-primary btn-block form-group" type="submit">Sign Up</button>
-      </form>
+      <div class="row">
+        <div class="col-sm-4">
+          <form class="form-signin form-group" role="form" action="/register" method="post" style="max-width: 300px;">
+            <h2 class="form-signin-heading form-group">Sign Up here</h2>
+            <input class="form-control form-group" type="text" name="username" placeholder="Your Username" />
+            <input class="form-control form-group" type="email" name="email" placeholder="Your Email" />
+            <input class="form-control form-group" type="password" name="password" placeholder="Your Password" />
+            <button class="btn btn-lg btn-primary btn-block form-group" type="submit">Sign Up</button>
+          </form>
+          <a href="/login" class="btn btn-warning btn-rounded btn-xl text-uppercase" type="submit">Login</a>
+        </div>
+      </div>
     </div>
   </div>
 

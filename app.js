@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
+var userAuthenticated = false;
 var app = express();
 
 // view engine setup
@@ -58,6 +58,19 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {status:err.status, message:err.message});
 });
+
+//check if user is logged in
+// app.use(function(req, res, next){
+// if (req.user) {
+//     res.locals.user = req.user;
+//     userAuthenticated = true;
+// } else {
+//   userAuthenticated = false;
+// }
+//
+// // next();
+// });
+
 
 //MongoDB config
 mongoose.Promise = global.Promise;
