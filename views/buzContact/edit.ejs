@@ -12,6 +12,11 @@
     <h3><%= title %></h3><br>
     <div class="row">
       <div class="col-sm-4">
+        <form action="/buzContact/<%= contact._id%>/delete" id="sendMessageButton" method="post">
+        <button type="submit" class="btn btn-warning btn-rounded btn-xl text-uppercase">Delete</button>
+        </form>
+        <br>
+        <a href="/buzContact/index" id="sendMessageButton" class="btn btn-primary btn-rounded btn-xl text-uppercase" type="submit">Cancel</a>
       </div>
       <div class="col-sm-8">
         <form action="/buzContact/<%= contact._id%>/edit" method="POST" >
@@ -20,6 +25,8 @@
       <input class="form-control form-group" type="email" placeholder="Contact Email Address" name="email" value="<%= contact.email%>" required/>
       <button class="btn btn-primary btn-rounded btn-xl text-uppercase" type="submit">Update</button>
     </form>
+
+
       </div>
     </div>
   </div>
